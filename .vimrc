@@ -1,5 +1,5 @@
 set nocompatible
-filetype off  
+filetype off
 
 set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -14,6 +14,7 @@ Plugin 'bling/vim-airline'
 Plugin 'valloric/youcompleteme'
 Plugin 'mileszs/ack.vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'pangloss/vim-javascript'
 
 call vundle#end()
 
@@ -46,14 +47,18 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 " mappings
+map ff <c-p>
+inoremap jj <Esc>
+inoremap kk <esc>l
 
 " config
 syntax on
 filetype plugin indent on
-set tabstop=2
-set shiftwidth=2
+set autoindent
+set tabstop=4
+set shiftwidth=4
 set backspace=2
-set expandtab
+set noexpandtab
 set relativenumber
 set laststatus=2
 
