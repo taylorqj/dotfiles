@@ -14,6 +14,10 @@ alias p="cd ~/projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
+alias maw="cd ~/development/push/care-portals/myaccount/web-app"
+alias mad="cd ~/development/push/care-portals/myaccount/web-app && npm run dev"
+alias mag="cd ~/development/push/care-portals/myaccount/ && grails run-app"
+alias ma="cd ~/development/push/care-portals/myaccount/"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
