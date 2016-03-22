@@ -48,10 +48,11 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 " mappings
+let mapleader = ","
 map ff <c-p>
 map <F5> :NERDTreeToggle<CR>
 inoremap jj <Esc>
-inoremap kk <esc>l
+nnoremap <Leader>l :set hlsearch! hlsearch?<CR>
 
 " config
 syntax on
