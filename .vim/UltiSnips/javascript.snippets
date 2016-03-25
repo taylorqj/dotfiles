@@ -1,0 +1,72 @@
+###########
+# Utility #
+###########
+
+snippet cl
+console.log(${1});
+endsnippet
+
+####################
+# Testing Snippets #
+####################
+
+snippet desc
+describe('${1}', () => {
+	${2}
+});
+endsnippet
+
+snippet descit
+describe('${1}', () => {
+	it('${2}', () => {
+		${3}
+	});
+});
+endsnippet
+
+snippet it
+it('${1}', () => {
+	${2}
+});
+endsnippet
+
+snippet itr
+it('${1}', () => {
+	const wrapper = render();
+	${2}
+});
+endsnippet
+
+snippet exp
+expect(${1}).${2};
+endsnippet
+
+#########
+# React #
+#########
+
+snippet sci
+import React, { PropTypes } from 'react';
+
+const ${1} = ({ ${2} }) => {
+	${3}
+};
+
+$1.displayName = $1;
+
+$1.propTypes = {}
+
+export default $1;
+endsnippet
+
+snippet sc
+const ${1} = ({ ${2} }) => {
+	${3}
+};
+
+$1.displayName = '$1';
+
+$1.propTypes = {}
+
+export default $1;
+endsnippet

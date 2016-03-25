@@ -16,6 +16,10 @@ Plugin 'mileszs/ack.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ervandew/supertab'
+Plugin 'carlitux/deoplete-ternjs'
+Plugin 'sirver/ultisnips'
 
 call vundle#end()
 
@@ -37,6 +41,15 @@ if executable('ag')
 	  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" YouCompleteMe and UltiSnips with help from SuperTab
+let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:SuperTabCrMapping = 0
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:ycm_key_list_select_completion = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
 " syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -48,7 +61,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 " mappings
-let mapleader = ","
+let mapleader = ','
 map ff <c-p>
 map <F5> :NERDTreeToggle<CR>
 inoremap jj <Esc>
@@ -64,7 +77,7 @@ set tabstop=4
 set shiftwidth=4
 set backspace=2
 set noexpandtab
-set relativenumber
+set number
 set laststatus=2
 
 " ignore
