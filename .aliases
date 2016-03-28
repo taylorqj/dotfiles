@@ -7,7 +7,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # replace vim
-alias vim="mvim -v"
+alias vim="nvim -u ~/.nvimrc"
 
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
