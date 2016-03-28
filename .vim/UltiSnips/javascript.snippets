@@ -45,7 +45,7 @@ endsnippet
 # React #
 #########
 
-snippet sci
+snippet rsci
 import React, { PropTypes } from 'react';
 
 const ${1} = ({ ${2} }) => {
@@ -56,14 +56,14 @@ const ${1} = ({ ${2} }) => {
 	);
 };
 
-$1.displayName = $1;
+$1.displayName = '$1';
 
 $1.propTypes = {}
 
 export default $1;
 endsnippet
 
-snippet sc
+snippet rsc
 const ${1} = ({ ${2} }) => {
 	${4}
 
@@ -71,6 +71,18 @@ const ${1} = ({ ${2} }) => {
 		${3}
 	);
 };
+
+$1.displayName = '$1';
+
+$1.propTypes = {}
+
+export default $1;
+endsnippet
+
+snippet rscr
+const ${1} = ({ ${2} }) => (
+	${3}
+);
 
 $1.displayName = '$1';
 

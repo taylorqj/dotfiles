@@ -23,10 +23,10 @@ Plugin 'sirver/ultisnips'
 
 call vundle#end()
 
-" theme
-colorscheme jellybeans
+" Themes
+colorscheme jellybeans 
 
-" ctrlp
+" CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
@@ -50,7 +50,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:ycm_key_list_select_completion = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
-" syntastic
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -60,14 +60,14 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
-" mappings
+" Mappings
 let mapleader = ','
 map ff <c-p>
 map <F5> :NERDTreeToggle<CR>
 inoremap jj <Esc>
 nnoremap <Leader>l :set hlsearch! hlsearch?<CR>
 
-" config
+" Config
 syntax on
 filetype plugin indent on
 set timeoutlen=1000
@@ -79,6 +79,10 @@ set backspace=2
 set noexpandtab
 set number
 set laststatus=2
+set visualbell " no sounds
+
+" Use the OS clipboard by default
+set clipboard=unnamed
 
 " ignore
 set wildignore+=*/node_modules/**
