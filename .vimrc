@@ -20,6 +20,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
 Plugin 'carlitux/deoplete-ternjs'
 Plugin 'sirver/ultisnips'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 
