@@ -10,7 +10,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'mileszs/ack.vim'
 Plugin 'jiangmiao/auto-pairs'
@@ -50,6 +50,11 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:ycm_key_list_select_completion = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
+" Lightline
+let g:lightline = {
+	\ 'colorscheme': 'jellybeans'
+	\ }
 
 " Syntastic
 set statusline+=%#warningmsg#
