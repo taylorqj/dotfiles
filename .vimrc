@@ -2,12 +2,13 @@ set nocompatible
 filetype off
 
 set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
-call vundle#begin()
 
+call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
@@ -21,16 +22,17 @@ Plugin 'ervandew/supertab'
 Plugin 'carlitux/deoplete-ternjs'
 Plugin 'sirver/ultisnips'
 Plugin 'terryma/vim-multiple-cursors'
-
+Plugin 'jpo/vim-railscasts-theme'
+Plugin 'marijnh/tern_for_vim'
 call vundle#end()
 
 " Themes
-colorscheme jellybeans 
+colorscheme railscasts 
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
@@ -38,8 +40,11 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
+" NerdTree
+let g:NERDTreeChDirMode = 2
+
 if executable('ag')
-	  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
 " YouCompleteMe and UltiSnips with help from SuperTab
@@ -53,18 +58,27 @@ let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
 " Lightline
 let g:lightline = {
-	\ 'colorscheme': 'jellybeans'
+	\ 'colorscheme': 'seoul256'
 	\ }
 
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
 
 " Mappings
 let mapleader = ','
@@ -90,5 +104,5 @@ set visualbell " no sounds
 " Use the OS clipboard by default
 set clipboard=unnamed
 
-" ignore
+" Ignore
 set wildignore+=*/node_modules/**
