@@ -1,8 +1,7 @@
 set nocompatible
+
 filetype off
-
 set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
-
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
@@ -20,11 +19,14 @@ Plugin 'mxw/vim-jsx'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
 Plugin 'carlitux/deoplete-ternjs'
-Plugin 'sirver/ultisnips'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jpo/vim-railscasts-theme'
+Plugin 'honza/vim-snippets'
+Plugin 'sirver/ultisnips'
 Plugin 'marijnh/tern_for_vim'
 call vundle#end()
+
+filetype plugin indent on
 
 " Themes
 colorscheme railscasts 
@@ -47,14 +49,16 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-" YouCompleteMe and UltiSnips with help from SuperTab
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:SuperTabCrMapping = 0
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:ycm_key_list_select_completion = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<C-k>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips/'
 
 " Lightline
 let g:lightline = {
@@ -89,7 +93,6 @@ nnoremap <Leader>l :set hlsearch! hlsearch?<CR>
 
 " Config
 syntax on
-filetype plugin indent on
 set timeoutlen=1000
 set ttimeoutlen=0
 set autoindent
