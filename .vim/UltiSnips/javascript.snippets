@@ -1,19 +1,162 @@
-snippet rtboiler
+snippet rtboiler "Test boiler" b
 import React from 'react';
 import { shallow } from 'enzyme';
-import ${1} from '${2}';
+import $1 from '${2}';
 
 describe('$1', () => {
-	${6}
+	const defaultProps = {
+		${3}
+	};
 
-	const render = () => shallow(
-		<$1
-			${3}	
-		/>	
-	);
+	function render(overrideProps) {
+		const wrapper = shallow(
+			<$1
+				{ ...defaultProps }
+				{ ...overrideProps }
+			/>
+		);
 
-	it('${4}', () => {
-		${5}
+		return {
+			wrapper,
+		};
+	}
+
+	${0}
+});
+endsnippet
+
+snippet desc "Testing describe" b
+describe('${1}', () => {
+	${2}
+});
+endsnippet
+
+snippet it "Testing it" b
+it('${1}', () => {
+	${2}
+});
+endsnippet
+
+snippet exp "Testing exp" b
+expect(${1}).${2};
+endsnippet
+
+snippet descit "Testing describe with it" b
+describe('${1}', () => {
+	it('${2}', () => {
+		${3}
 	});
 });
+endsnippet
+
+snippet exists "Testing check if component exists" b
+it('${1}', () => {
+	const { $2 } = render();
+
+	expect($2.length).toBe(1);
+});
+endsnippet
+
+snippet impd "Import Default ES6" b
+import $1 from '${2:components/${3}}';
+endsnippet
+
+snippet imp "Import ES6" b
+import { $1 } from '${2:components/${3}}';
+endsnippet
+
+snippet impshared "Import Shared React Components" b
+import { $1 } from 'components/shared/react-components/${2}';
+endsnippet
+
+snippet impdshared "Import Shared React Components" b
+import { $1 } from 'components/shared/react-components/${2}';
+endsnippet
+
+snippet t "HTML Tag" b
+<${1:div}${2: className={"${3}"}}>
+	${0}
+</$1>
+endsnippet
+
+snippet col "React Bootstrap Col Tag" b
+<Col${2: className={"${3}"}} xs={${4}}>
+	${0}
+</Col>
+endsnippet
+
+snippet row "React Bootstrap Row Tag" b
+<${1:Row}${2: className={"${3}"}} xs={${4}}>
+	${0}
+</$1>
+endsnippet
+
+snippet a
+<a href="$1"${2: className={"${3}"}}>
+	$0
+</a>
+endsnippet
+
+snippet jif "JSX if statement" b
+{${1} && (
+	${0}
+)}
+endsnippet
+
+snippet message "Message component" b
+<Message code={${1}} />
+endsnippet
+
+snippet h1 "h1 heading" b
+<h1>{${1}}</h1>
+endsnippet
+
+snippet rstateless "React Stateless Component" b
+import React${1:, { PropTypes }} from 'react';
+
+export const $2 = (${3:{}}) => ${4:(
+	${5:<div></div>}
+);}
+
+${6:$2.propTypes = {
+	${7}
+}}
+export default $2;
+
+endsnippet
+
+snippet contain "React Container" b
+import { connect } from 'react-redux';
+import $1 from '${2:../components/${3:$1}}';
+${4:import { bindActionCreators } from 'react';}
+${5:import { ${6} } from '../actions';}
+
+export default connect(
+	${7:mapStateToProps,}
+	${8:mapDispatchToProps,}
+)($1);
+${9:
+export function mapStateToProps(${10:{ ${11} }}) {
+	return {
+		${12}
+	};
+};}
+${13:
+export function mapDispatchToProps(dispatch) {
+	return ${14:bindActionCreators({
+		${15}
+	}, dispatch);}
+}}
+endsnippet
+
+snippet ca "Create action" b
+export const ${1} = createAction(a.${2});
+endsnippet
+
+snippet cea "Create error action" b
+export const ${1} = createErrorAction(a.${2});
+endsnippet
+
+snippet cat "Create action type" b
+export const $1 = '$1';
 endsnippet

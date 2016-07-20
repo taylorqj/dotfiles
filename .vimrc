@@ -18,14 +18,11 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
-Plugin 'carlitux/deoplete-ternjs'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jpo/vim-railscasts-theme'
 Plugin 'honza/vim-snippets'
 Plugin 'sirver/ultisnips'
-Plugin 'marijnh/tern_for_vim'
 call vundle#end()
-
 filetype plugin indent on
 
 " Themes
@@ -53,12 +50,17 @@ endif
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1 
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<C-k>"
+let g:UltiSnipsEditSplit = 'vertical'
+let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips/'
+let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsSnippetsDir = $HOME.'/.vim/UltiSnips'
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 " Lightline
 let g:lightline = {
