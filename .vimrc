@@ -25,9 +25,6 @@ Plugin 'sirver/ultisnips'
 call vundle#end()
 filetype plugin indent on
 
-" Themes
-colorscheme railscasts 
-
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -64,7 +61,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 " Lightline
 let g:lightline = {
-	\ 'colorscheme': 'seoul256'
+	\ 'colorscheme': 'solarized'
 	\ }
 
 " Syntastic
@@ -93,8 +90,20 @@ map <F5> :NERDTreeToggle<CR>
 inoremap jj <Esc>
 nnoremap <Leader>l :set hlsearch! hlsearch?<CR>
 
-" Config
+" Themes
 syntax on
+
+if has('gui_running')
+	set background=dark
+else
+	set background=light
+endif
+
+colorscheme solarized 
+
+let g:solarized_termcolors=256
+
+" Config
 set timeoutlen=1000
 set ttimeoutlen=0
 set autoindent
