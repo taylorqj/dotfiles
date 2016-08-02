@@ -43,6 +43,9 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" js
+let g:javascript_plugin_flow = 1
+
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -107,13 +110,19 @@ let g:solarized_termcolors=256
 set timeoutlen=1000
 set ttimeoutlen=0
 set autoindent
-set tabstop=4
-set shiftwidth=4
-set backspace=2
 set noexpandtab
 set number
 set laststatus=2
 set visualbell " no sounds
+
+" Spacing
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+"set tabstop=2
+"set shiftwidth=2
+"set backspace=2
 
 " Use the OS clipboard by default
 set clipboard=unnamed

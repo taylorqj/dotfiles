@@ -1,11 +1,13 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/taylorqj/.oh-my-zsh
+export ZSH=/home/taylorqj/.oh-my-zsh
+
+# [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="pygmalion"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -82,3 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/taylorqj/.sdkman"
+[[ -s "/home/taylorqj/.sdkman/bin/sdkman-init.sh" ]] && source "/home/taylorqj/.sdkman/bin/sdkman-init.sh"
