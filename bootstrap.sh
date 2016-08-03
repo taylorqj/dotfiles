@@ -1,7 +1,7 @@
 #!/bin/bash
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".profile .vimrc .vim .aliases .gitconfig .tmux.conf"       # list of files/folders to symlink in homedir
+files=".profile .vimrc .vim .aliases .gitconfig .tmux.conf .zshrc"       # list of files/folders to symlink in homedir
 nvim=true
 
 # create dotfiles_old in homedir
@@ -37,3 +37,5 @@ source ~/.vimrc
 source ~/.vim
 source ~/.gitconfig
 source ~/.aliases
+source ~/.tmux.conf
+source ~/.zshrc
