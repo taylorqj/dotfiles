@@ -26,7 +26,6 @@ call vundle#end()
 filetype plugin indent on
 
 " CtrlP
-let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
@@ -93,6 +92,9 @@ map <F5> :NERDTreeToggle<CR>
 inoremap jj <Esc>
 nnoremap <Leader>l :set hlsearch! hlsearch?<CR>
 
+" User <C-c> if ubuntu for copy
+vnoremap <C-c> "+y
+
 " Themes
 syntax on
 
@@ -120,8 +122,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-"set tabstop=2
-"set shiftwidth=2
+"set tabstop=4
+"set shiftwidth=4
 "set backspace=2
 
 " Use the OS clipboard by default
@@ -129,3 +131,6 @@ set clipboard=unnamed
 
 " Ignore
 set wildignore+=*/node_modules/**
+
+" Store swap files in fixed location not the current dir 
+set dir=~/.vimswap//,/var/tmp//,/tmp//,.
