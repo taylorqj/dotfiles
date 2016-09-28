@@ -1,59 +1,22 @@
-snippet rtboiler "Test boiler" b
-import React from 'react';
-import { shallow } from 'enzyme';
-import $1 from '${2}';
-
-describe('$1', () => {
-	const defaultProps = {
-		${3}
-	};
-
-	function render(overrideProps) {
-		const wrapper = shallow(
-			<$1
-				{ ...defaultProps }
-				{ ...overrideProps }
-			/>
-		);
-
-		return {
-			wrapper,
-		};
-	}
-
-	${0}
-});
+snippet impt "Ava test import" b
+import test from 'ava-spec';
 endsnippet
 
-snippet desc "Testing describe" b
-describe('${1}', () => {
-	${2}
-});
+snippet tis "Ava test is" b
+t.is($1, $2);
 endsnippet
 
-snippet it "Testing it" b
-it('${1}', () => {
-	${2}
-});
+snippet tdeep "Ava test deep equal" b
+t.deepEqual($1, $2);
 endsnippet
 
-snippet exp "Testing exp" b
-expect(${1}).${2};
+snippet tb "Ava test bool" b
+t.${1:true}($2, $3);
 endsnippet
 
-snippet descit "Testing describe with it" b
-describe('${1}', () => {
-	it('${2}', () => {
-		${3}
-	});
-});
-endsnippet
-
-snippet exists "Testing check if component exists" b
-it('${1}', () => {
-	const { $2 } = render();
-
-	expect($2.length).toBe(1);
+snippet test "Ava test block" b
+test('$1', t => {
+	$2
 });
 endsnippet
 

@@ -5,6 +5,8 @@ set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
@@ -22,6 +24,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jpo/vim-railscasts-theme'
 Plugin 'honza/vim-snippets'
 Plugin 'sirver/ultisnips'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 call vundle#end()
 filetype plugin indent on
 
@@ -101,10 +104,10 @@ syntax on
 if has('gui_running')
 	set background=dark
 else
-	set background=light
+	set background=dark
 endif
 
-colorscheme solarized 
+colorscheme jellybeans 
 
 let g:solarized_termcolors=256
 
@@ -118,13 +121,13 @@ set laststatus=2
 set visualbell " no sounds
 
 " Spacing
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
 "set tabstop=4
 "set shiftwidth=4
-"set backspace=2
+"set softtabstop=4
+"set expandtab
+set tabstop=4
+set shiftwidth=4
+set backspace=2
 
 " Use the OS clipboard by default
 set clipboard=unnamed
