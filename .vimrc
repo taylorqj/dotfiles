@@ -6,6 +6,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-slueth'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -119,15 +120,6 @@ set noexpandtab
 set number
 set laststatus=2
 set visualbell " no sounds
-
-" Spacing
-"set tabstop=4
-"set shiftwidth=4
-"set softtabstop=4
-"set expandtab
-set tabstop=4
-set shiftwidth=4
-set backspace=2
 
 " Use the OS clipboard by default
 set clipboard=unnamed
