@@ -1,12 +1,13 @@
 set nocompatible
-
 filetype off
-set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
+
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-slueth'
+Plugin 'tpope/vim-sleuth'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -22,12 +23,20 @@ Plugin 'mxw/vim-jsx'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'jpo/vim-railscasts-theme'
 Plugin 'honza/vim-snippets'
 Plugin 'sirver/ultisnips'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 call vundle#end()
 filetype plugin indent on
+
+" Spacing
+set tabstop=4
+set shiftwidth=4
+set backspace=2
+set expandtab
+
+" JS JSX Files
+let g:jsx_ext_required = 0
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlP'
@@ -67,7 +76,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 " Lightline
 let g:lightline = {
-	\ 'colorscheme': 'solarized'
+	\ 'colorscheme': 'breezy'
 	\ }
 
 " Syntastic
@@ -108,15 +117,13 @@ else
 	set background=dark
 endif
 
+set background=dark
+set termguicolors
 colorscheme jellybeans 
-
-let g:solarized_termcolors=256
 
 " Config
 set timeoutlen=1000
 set ttimeoutlen=0
-set autoindent
-set noexpandtab
 set number
 set laststatus=2
 set visualbell " no sounds
